@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Web.MVC.ComercioDigital.Models.Produto>
+
+@{
+    ViewBag.Title = "Produtos";
+}
+
+<h3>Lista de Produtos</h3>
+
+<p>
+    @Html.ActionLink("Adicionar Novo Produto", "NovoProduto")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Valor)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valor)
+            </td>
+            <td>
+                @Html.ActionLink("Alterar", "AtualizaProduto", new { id = item.Id }) |
+                @Html.ActionLink("Excluir", "ExcluiProduto", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

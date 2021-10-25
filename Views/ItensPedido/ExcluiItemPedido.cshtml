@@ -1,0 +1,56 @@
+﻿@model Web.MVC.ComercioDigital.Models.ItemPedido
+
+@{
+    ViewBag.Title = "Excluir Item de pedido";
+}
+
+<h3>Excluir Cliente</h3>
+
+<h4>Deseja realmente excluir o item do pedido?</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TituloPedido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TituloPedido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeProduto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeProduto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantidade)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar", "Index", "Pedido")
+        </div>
+    }
+</div>
